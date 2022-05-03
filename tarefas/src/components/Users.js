@@ -5,7 +5,11 @@ class Users extends React.Component {
         super(props);
 
         this.state = {
-            users: [],  
+            users: [
+                {'id': 1, 'nome':'Luiz Fernando','username':'Lu', 'email':'luiz@gmail.com'},
+                {'id': 2, 'nome':'Mateus Bezzan', 'username':'bezzan','email':'mateus@gmail.com'},
+                {'id': 3, 'nome':'Nayara', 'username':'Nay','email':'nay@gmail.com'},
+            ],  
         }
     }
     render() {
@@ -20,12 +24,17 @@ class Users extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Luiz</td>
-                        <td>Luiz123</td>
-                        <td>luiz@gmail.com</td>
-                        <td>Atualizar Excluir</td>
-                    </tr>
+
+                    {
+                        this.state.users.map((user) =>
+                        <tr>
+                            <td>{user.nome}</td>
+                            <td>{user.username}</td>
+                            <td>{user.email}</td>
+                            <td>Atualizar Excluir</td>
+                        </tr>
+                        )
+                    }
                 </tbody>
             </Table>
         )
