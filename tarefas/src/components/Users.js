@@ -5,12 +5,20 @@ class Users extends React.Component {
         super(props);
 
         this.state = {
-            users: [
-                {'id': 1, 'nome':'Luiz Fernando','username':'Lu', 'email':'luiz@gmail.com'},
-                {'id': 2, 'nome':'Mateus Bezzan', 'username':'bezzan','email':'mateus@gmail.com'},
-                {'id': 3, 'nome':'Nayara', 'username':'Nay','email':'nay@gmail.com'},
-            ],  
+            users: [],  
         }
+    }
+
+    componentDidMount(){
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(data =>{
+            this.setState({users: data});
+        })
+    }
+
+    componentWilMount(){
+        alert("O componente de users foi criado!")
     }
     render() {
         return (
@@ -28,7 +36,7 @@ class Users extends React.Component {
                     {
                         this.state.users.map((user) =>
                         <tr>
-                            <td>{user.nome}</td>
+                            <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>
                             <td>Atualizar Excluir</td>
