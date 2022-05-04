@@ -1,7 +1,7 @@
 import React from 'react'
 import './user.css'
 
-const User = ({id,email,name,onDelete}) => {
+const User = ({ id,email,name,onDelete }) => {
 
     const handleDelete = () => {
         onDelete(id);
@@ -12,8 +12,8 @@ const User = ({id,email,name,onDelete}) => {
             <span>{name}</span>
             <span>{email}</span>
             <span>
-                <button>edit</button>
-                <button onClick={handleDelete}>delete</button>
+                <button>Editar</button>
+                <button onClick={handleDelete}>Deletar</button>
             </span>
         </div>
     )

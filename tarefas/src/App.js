@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import AddUser from "./components/AddUser";
 import User from "./components/User";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const [users, setUsers] = useState([]);
