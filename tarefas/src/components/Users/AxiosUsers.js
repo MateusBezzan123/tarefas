@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import './user.css'
 import AddUser from "./AddUser";
 import User from "./User";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const AxiosUsers = () => {
   const [users, setUsers] = useState([]);
@@ -39,6 +40,7 @@ const AxiosUsers = () => {
       })
       .then((data) => {
         setUsers((users) => [...users, data]);
+        alert("Adicionou o Usuario")
       })
       .catch((err) => {
         console.log(err);
@@ -64,7 +66,6 @@ const AxiosUsers = () => {
         console.log(err);
       });
   };
-
   console.log(users);
   return (
     <div className="App">
