@@ -65,7 +65,7 @@ const AxiosTodos = () => {
         console.log(err);
       });
   };
-  console.log(todos);
+  
   return (
     <div className="App">
       <h3>Todos</h3>
