@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  AxiosUsers  from "./components/Users/AxiosUsers"
+import  AxiosTodos  from "./components/Todos/AxiosTodos"
 import Home from "./components/Home/Home"
 import { Nav } from "react-bootstrap";
 import {BrowserRouter, Link, Switch,Route} from 'react-router-dom'
@@ -15,10 +16,12 @@ const App = () => {
         <Nav variant="tabs">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <Nav.Link as={Link} to='/users'>Cadastros de Usuarios</Nav.Link>
+            <Nav.Link as={Link} to='/todos'>Cadastros de Todos</Nav.Link>
         </Nav>
         <Switch>
           <Route path='/' exact='true' component={Home}></Route>
           <Route path='/users' exact='true' component={AxiosUsers}></Route>
+          <Route path='/todos' exact='true' component={AxiosTodos}></Route>
         </Switch>
       </BrowserRouter>
     </div>

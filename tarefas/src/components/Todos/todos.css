@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.list {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    margin: 5px;
+    margin-left: 30%;
+  }
+
+input {
+  margin: 10px;
+}
+
+.button {
+  margin: 10px;
+}
