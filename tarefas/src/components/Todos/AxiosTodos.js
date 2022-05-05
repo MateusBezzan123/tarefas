@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import './todos.css'
+import "./todos.css";
 import AddTodo from "./AddTodo";
 import Todo from "./Todo";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const AxiosTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -39,7 +39,7 @@ const AxiosTodos = () => {
       })
       .then((data) => {
         setTodos((todos) => [...todos, data]);
-        alert("Adicionou o Todo")
+        alert("Adicionou o Todo");
       })
       .catch((err) => {
         console.log(err);
@@ -65,13 +65,21 @@ const AxiosTodos = () => {
         console.log(err);
       });
   };
-  
+
   return (
     <div className="App">
       <h3>Todos</h3>
 
       <br />
       <AddTodo onAdd={onAdd} />
+      <ReactHTMLTableToExcel
+        id="test-table-xls-button"
+        className="download-table-xls-button btn btn-success mb-3"
+        table="table-to-xls"
+        filename="tablexls"
+        sheet="tablexls"
+        buttonText="Exportar para Excel "
+      />
       <div>
         {todos.map((todo) => (
           <Todo
@@ -86,4 +94,4 @@ const AxiosTodos = () => {
   );
 };
 
-export default AxiosTodos
+export default AxiosTodos;

@@ -99,6 +99,7 @@ const AxiosUsers = () => {
     fetchData();
   }, []);
 
+  console.log("Usuarios", users);
   return (
     <div className="App">
       <h3>Usuarios</h3>
