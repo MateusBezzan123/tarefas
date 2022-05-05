@@ -67,34 +67,6 @@ const AxiosUsers = () => {
       });
   };
 
-  // const onUpdate = async (id,name, email) => {
-  //   await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify({
-  //       id: id,
-  //       name: name,
-  //       email: email,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //     },
-  //   })
-  //     .then((res) => {
-  //       if (res.status !== 201) {
-  //         return;
-  //       } else {
-  //         return res.json();
-  //       }
-  //     })
-  //     .then((data) => {
-  //       setUsers((users) => [...users, data]);
-  //       alert("Adicionou o Usuario")
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   useEffect(() => {
     fetchData();
   }, []);
